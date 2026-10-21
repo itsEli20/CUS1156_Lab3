@@ -12,9 +12,15 @@ public class UniqueWords
 	  int count = 0;
 	  
       for (int i = 0; i < list.size(); i++)
-      {		 for (int j = 0; j < list.size(); j++)
+      {	
+    	  for (int j = 0; j < list.size(); j++)
 		 {
-			
+			if(list.get(i).equals(list.get(j))) {// if the words are the same, and i and j match then the count will increase, but if one of them are different then break. 
+				if(i==j) {
+					count++;
+				}
+				break;// prevents inner loop in finding more elements and goes back to outer loop
+			}
 		 }
       }
 	  return count;
